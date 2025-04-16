@@ -41,10 +41,10 @@ public class LaunchManager : Singleton<LaunchManager>
 
             myProcess.StartInfo.FileName = fileName;
             myProcess.StartInfo.CreateNoWindow = true;
-
-            IdleMonitor.Instance.LaunchedProcess = myProcess;
-
+            
             myProcess.Start();
+            
+            IdleMonitor.Instance.LaunchedProcess = myProcess;
         }
         catch (Exception e)
         {

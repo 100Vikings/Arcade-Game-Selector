@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5001027789b4af64b8ec5eff291805d7
+guid: 5fbcef043cc946640a1eaf709ed10263
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Arcade
+  - Sixtyfour
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

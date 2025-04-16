@@ -12,6 +12,7 @@ public class GameUIController : Singleton<GameUIController>
 {
     [SerializeField] private Image thumbnailImage;
     [Header("Dial Properties")]
+    [SerializeField] private Image dialBackdropImage;
     [SerializeField] private GameObject dialEntryPrefab;
     [SerializeField] private float spinDuration = 4f;
     [SerializeField] private AnimationCurve spinCurve;
@@ -32,6 +33,10 @@ public class GameUIController : Singleton<GameUIController>
     {
         radStep = 2f * Mathf.PI / titles.Length;
         float distance = 24f * titles.Length;
+
+        Vector2 sizeDelta = dialBackdropImage.rectTransform.sizeDelta;
+        sizeDelta.y = 55f * titles.Length;
+        dialBackdropImage.rectTransform.sizeDelta = sizeDelta;
 
         entryAngles = new();
 
