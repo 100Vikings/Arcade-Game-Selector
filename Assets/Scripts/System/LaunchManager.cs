@@ -66,5 +66,8 @@ public class LaunchManager : Singleton<LaunchManager>
         }
 
         Playing = false;
+        
+        yield return new WaitForSeconds(2f);
+        GameUIController.Instance.StartDemoSpin();
     }
 }

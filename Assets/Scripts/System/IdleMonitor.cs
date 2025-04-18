@@ -92,7 +92,7 @@ public class IdleMonitor : Singleton<IdleMonitor>
             return 0f;
         }
 
-        uint idleMilliseconds = ((uint)Environment.TickCount - lastInputInfo.dwTime) - launchLastInputTick;
+        uint idleMilliseconds = (uint)Environment.TickCount - lastInputInfo.dwTime; // - launchLastInputTick;
         return idleMilliseconds / 1000f;
     }
 

@@ -734,6 +734,7 @@ MonoBehaviour:
   thumbnailImage: {fileID: 582544586}
   dialBackdropImage: {fileID: 719258052}
   dialEntryPrefab: {fileID: 62729135451086997, guid: 80ee4c580342e974495e299544cde3e0, type: 3}
+  demoSpinSpeed: 90
   spinDuration: 4
   spinCurve:
     serializedVersion: 2
@@ -851,74 +852,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -700}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &561083643
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 561083646}
-  - component: {fileID: 561083645}
-  - component: {fileID: 561083644}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &561083644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561083643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &561083645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561083643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &561083646
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561083643}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1795,7 +1728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcde2630662f5f47aa252765684a309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <GameRootFolder>k__BackingField: C:\Temp
+  <GameRootFolder>k__BackingField: C:\ArcadeGames
   uiController: {fileID: 516069424}
 --- !u!4 &1075163672
 Transform:
@@ -2678,7 +2611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9b419a783cc7a48a439c94b60cd44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleThreshold: 10
+  idleThreshold: 300
 --- !u!1 &1844737620
 GameObject:
   m_ObjectHideFlags: 0
@@ -8067,6 +8000,7 @@ GameObject:
   - component: {fileID: 2121389474}
   - component: {fileID: 2121389473}
   - component: {fileID: 2121389472}
+  - component: {fileID: 2121389475}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -8142,19 +8076,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &2121389475
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121389470}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1075163672}
-  - {fileID: 516069422}
   - {fileID: 1045536894}
   - {fileID: 1690650439}
   - {fileID: 1641025715}
+  - {fileID: 516069422}
   - {fileID: 2121389474}
   - {fileID: 1970015161}
   - {fileID: 519420032}
   - {fileID: 1411116088}
-  - {fileID: 561083646}
   - {fileID: 1968552691}
   - {fileID: 854090463}

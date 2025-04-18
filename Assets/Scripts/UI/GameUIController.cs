@@ -14,6 +14,7 @@ public class GameUIController : Singleton<GameUIController>
     [Header("Dial Properties")]
     [SerializeField] private Image dialBackdropImage;
     [SerializeField] private GameObject dialEntryPrefab;
+    [SerializeField] private float demoSpinSpeed = 180f;
     [SerializeField] private float spinDuration = 4f;
     [SerializeField] private AnimationCurve spinCurve;
     [Header("Text Fields")]
@@ -28,6 +29,11 @@ public class GameUIController : Singleton<GameUIController>
 
     private float radStep;
     private int randomGameIndex;
+
+    private void Start()
+    {
+        StartDemoSpin();
+    }
 
     public void SetTitles(string[] titles)
     {
@@ -62,12 +68,29 @@ public class GameUIController : Singleton<GameUIController>
         thumbnailImage.sprite = thumbnails[0];
     }
 
-    public void OnSpin(InputAction.CallbackContext context)
+    [ContextMenu("Demo Spin")]
+    public void StartDemoSpin()
     {
-        if (context.started && !LaunchManager.Instance.Playing) SpinTheDial();
+        StartCoroutine(DemoSpin());
     }
 
-    public void SpinTheDial()
+    private IEnumerator DemoSpin()
+    {
+        transform.Rotate(Vector3.right, demoSpinSpeed * Time.deltaTime);
+        yield return null;
+        StartCoroutine(DemoSpin());
+    }
+
+    public void OnSpin(InputAction.CallbackContext context)
+    {
+        if (context.started && !LaunchManager.Instance.Playing)
+        {
+            StopAllCoroutines();
+            SpinTheDial();
+        }
+    }
+
+    private void SpinTheDial()
     {
         LaunchManager.Instance.Playing = true;
         float randomExtraRotation = Random.Range(5, 10) * 360f;
